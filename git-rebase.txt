@@ -1,0 +1,43 @@
+hello in this episode, we are going to talk about `git-rebase`, but before that let me try to make it clear the dilemma 
+we have in our daily development.
+
+First, let's have a playground
+
+    mkdir gitshow
+
+and we will do everything here inside. Now we have a project
+
+    mkdir proj
+    cd proj
+    vim hello.c # add a file to this proj
+    git add . # let git knows that we want to track this file
+    git commit -a -m " init commit" # let's save the revision, or, in git's term: commit
+
+now, we setup a server to host this project.
+
+    mkdir github # obviously this is a fake github
+    cd github
+    git clone --bare ../proj # usuall what we have on the server is just a bare clone, by saying that I mean there is no working tree here, since nobody going to do the development here.
+
+while instead, people do development on their local machines
+
+    mkdir local-machines
+    mkir kk daniel # let's say we have two people working on this project
+    cd kk
+    git clone ../github/proj.git
+    cd proj
+    git config user.name kk # we set the name of committer to "kk" for JUST this clone
+    gitc config user.email kk@kk.com
+    # let's do the same for daniel
+
+so, now we've imitated a simple development strucure
+
+    tree -L 2
+
+we have one server repository and two local clones
+we just set up some bash vaviables to make it easier to navigate around
+
+    export $s=...
+    export $k=...
+    export $d=...
+
