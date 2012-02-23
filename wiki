@@ -1,6 +1,11 @@
 since happycasts stress on  problem-centered and "get the probem solved", so I will this time talk about github workflow, rather than git-rebase. git-rebase will be used just as a sligtly nicer way than git-pull.
 but happycasts can also be tool-centered, so I may give a overview to git-rebase as well. 
 
+0. when you always pull before you do your own commits, and nobody will push while you are doing your patch.
+
+    everybody is happy, just run git pull and git push
+    this is no way for conflicts to happen
+
 1. when someone pulled before you, and there is no conflicts
     
     you can do either git pull or git rebase
