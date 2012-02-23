@@ -1,0 +1,21 @@
+since happycasts stress on  problem-centered and "get the probem solved", so I will this time talk about github workflow, rather than git-rebase. git-rebase will be used just as a sligtly nicer way than git-pull.
+but happycasts can also be tool-centered, so I may give a overview to git-rebase as well. 
+
+1. when someone pulled before you, and there is no conflicts
+    
+    you can do either git pull or git rebase
+
+    so people the steps, show people the end result, let people decide which one    they need, pull or rebase?
+
+2. when someone pulled before you and there is conflicts
+
+    you still can do both
+    show people the merge tool, maybe
+
+
+#shownotes
+
+```terminal
+sudo apt-get install meld
+git config --global merge.tool meld
+```
