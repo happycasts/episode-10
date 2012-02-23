@@ -18,6 +18,28 @@ but happycasts can also be tool-centered, so I may give a overview to git-rebase
     show people the merge tool, maybe
 
 
+NOTE: git rebase origin/master usually does not work, you need to pull the server master to the local first then do the rebase locally. If you want "git rebase origin/master" work, you first need to do "git fetch origin" so that the .git/ref/origin/master sha1 can be updated.
+
+this:
+
+    git checkout -b tmp
+    git checkout master
+    git throwh
+    git pull
+    git checkout tmp
+    git rebase master
+    git checkout master
+    git merge tmp
+    git push
+
+equals:
+
+    git fetch origin
+    git rebase origin/master
+    git push
+
+
+
 #shownotes
 
 ```terminal
